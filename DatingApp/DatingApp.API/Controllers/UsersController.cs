@@ -13,7 +13,7 @@ namespace DatingApp.API.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
 
@@ -27,6 +27,7 @@ namespace DatingApp.API.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
